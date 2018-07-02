@@ -1,0 +1,117 @@
+--Maak de table locatie aan
+
+CREATE TABLE `locatie` (
+  `Locatiecode` INT NOT NULL ,
+  `Locatie` VARCHAR(50) NOT NULL ,
+   PRIMARY KEY (`Locatiecode`)
+)
+
+--Vul de table locatie met aangeleverde gegevens
+
+INSERT INTO `locatie` (`Locatiecode`, `Locatie`) VALUES
+  ('1', 'Locatie Rotterdam'),
+  ('2', 'Locatie Almere'),
+  ('3', 'Locatie Eindhoven')
+
+
+
+
+
+--Maak de table fabriek aan
+
+CREATE TABLE `fabriek` (
+  `Fabriekscode` INT NOT NULL ,
+  `Fabriek` VARCHAR(30) NOT NULL ,
+  `Telefoon` VARCHAR(30) NOT NULL ,
+  PRIMARY KEY (`Fabriekscode`))
+
+--Vul de table fabriek met aangeleverde gegevens
+
+INSERT INTO `fabriek` (`Fabriekscode`, `Fabriek`, `Telefoon`) VALUES
+  ('1', 'Workx', '0638383888'),
+  ('2', 'Black & Decker', '0684394337'),
+  ('3', 'Einhell', '0645673284'),
+  ('4', 'Kärcher', '0643277432'),
+  ('5', 'Bosch', '0692929245'),
+  ('6', 'Sencys', '0643247392')
+
+
+
+
+
+--Maak de table producten aan
+
+CREATE TABLE `artiekel` (
+  `Productcode` INT NOT NULL ,
+  `Product` VARCHAR(30) NOT NULL ,
+  `Type` VARCHAR(30) NULL DEFAULT NULL ,
+  `Fabriekscode` INT NOT NULL ,
+  `Inkoopprijs` INT NOT NULL ,
+  `Verkoopprijs` INT NOT NULL ,
+  PRIMARY KEY (`Productcode`))
+
+--Vul de table producten met aangeleverde gegevens
+
+INSERT INTO `artiekel` (`Productcode`, `Product`, `Type`, `Fabriekscode`, `Inkoopprijs`, `Verkoopprijs`) VALUES
+('1', 'Accuboorhamer', 'WX 382', '1', '6995', '11175'),
+('2', '4-in-1 schuurmachine', 'KA 280 K', '2', '5595', '6795'),
+('3', 'Accuboorhamer', 'BT-MS 2112', '1', '4995', '6749'),
+('4', 'Accuboorhamer', 'WD2.200', '1', '2995', '4796'),
+('5', 'Accuboorhamer', 'WX 382', '1', '6995', '11175'),
+('6', 'Accuboorhamer', 'PSR 14.4', '1', '5995', '6800'),
+('7', 'Accuboorhamer', '', '1', '995', '1520'),
+('8', 'Accuboorhamer', 'WM 536', '1', '4995', '6320'),
+('9', 'Accuboorhamer', 'PCL 20', '1', '9995', '12240'),
+('10', 'Accuboorhamer', 'WX 382', '1', '6995', '11175'),
+('11', 'Accuboorhamer', 'PSR 14.4', '1', '5995', '6800')
+
+--Wijzig de artiekel table zodat deze een relatie kan krijgen
+
+ALTER TABLE `artiekel` ADD INDEX(`Fabriekscode`);
+
+
+
+
+
+--Maak de table voorraad aan
+
+CREATE TABLE `Voorraad`
+  ( `Locatiecode` INT NOT NULL ,
+  `Productcode` INT NOT NULL ,
+  `Aantal` INT NOT NULL ,
+  PRIMARY KEY (`Locatiecode`, `Productcode`))
+
+--Vul de table Voorrad met aangeleverde gegevens
+
+INSERT INTO `voorraad` (`Locatiecode`, `Productcode`, `Aantal`) VALUES
+('1', '1', '10'),
+('1', '2', '15'),
+('1', '3', '2'),
+('2', '4', '4'),
+('2', '5', '11'),
+('2', '6', '12'),
+('2', '7', '54'),
+('3', '8', '14'),
+('3', '9', '11'),
+('3', '10', '11'),
+('3', '11', '12')
+
+
+
+
+
+--Maak de table Medewerkers aan
+
+CREATE TABLE `Medewerkers` (
+  `Medewerkerscode` INT NOT NULL ,
+  `Voorletters` VARCHAR(10) NULL ,
+  `Voorvoegsels` VARCHAR(10) NULL ,
+  `Achternaam` VARCHAR(30) NOT NULL ,
+  `Gebruikersnaam` VARCHAR(30) NOT NULL ,
+  `Wachtwoord` VARCHAR(30) NOT NULL ,
+  PRIMARY KEY (`Medewerkerscode`))
+
+--vul de table medewerkers met aangeleverde gegevens
+
+INSERT INTO `medewerkers` (`Medewerkerscode`, `Voorletters`, `Voorvoegsels`, `Achternaam`, `Gebruikersnaam`, `Wachtwoord`) VALUES
+  ('1', 'D.M', 'De Heer', 'Huigen', 'danny', 'Welkom01')
