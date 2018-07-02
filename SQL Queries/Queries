@@ -1,31 +1,31 @@
---Maak de table locatie aan
+/*Maak de table locatie aan*/
 
 CREATE TABLE `locatie` (
   `Locatiecode` INT NOT NULL ,
   `Locatie` VARCHAR(50) NOT NULL ,
    PRIMARY KEY (`Locatiecode`)
-)
+);
 
---Vul de table locatie met aangeleverde gegevens
+/*Vul de table locatie met aangeleverde gegevens*/
 
 INSERT INTO `locatie` (`Locatiecode`, `Locatie`) VALUES
   ('1', 'Locatie Rotterdam'),
   ('2', 'Locatie Almere'),
-  ('3', 'Locatie Eindhoven')
+  ('3', 'Locatie Eindhoven');
 
 
 
 
 
---Maak de table fabriek aan
+/*Maak de table fabriek aan*/
 
 CREATE TABLE `fabriek` (
   `Fabriekscode` INT NOT NULL ,
   `Fabriek` VARCHAR(30) NOT NULL ,
   `Telefoon` VARCHAR(30) NOT NULL ,
-  PRIMARY KEY (`Fabriekscode`))
+  PRIMARY KEY (`Fabriekscode`));
 
---Vul de table fabriek met aangeleverde gegevens
+/*Vul de table fabriek met aangeleverde gegevens*/
 
 INSERT INTO `fabriek` (`Fabriekscode`, `Fabriek`, `Telefoon`) VALUES
   ('1', 'Workx', '0638383888'),
@@ -33,13 +33,13 @@ INSERT INTO `fabriek` (`Fabriekscode`, `Fabriek`, `Telefoon`) VALUES
   ('3', 'Einhell', '0645673284'),
   ('4', 'Kärcher', '0643277432'),
   ('5', 'Bosch', '0692929245'),
-  ('6', 'Sencys', '0643247392')
+  ('6', 'Sencys', '0643247392');
 
 
 
 
 
---Maak de table producten aan
+/*Maak de table producten aan*/
 
 CREATE TABLE `artiekel` (
   `Productcode` INT NOT NULL ,
@@ -48,9 +48,9 @@ CREATE TABLE `artiekel` (
   `Fabriekscode` INT NOT NULL ,
   `Inkoopprijs` INT NOT NULL ,
   `Verkoopprijs` INT NOT NULL ,
-  PRIMARY KEY (`Productcode`))
+  PRIMARY KEY (`Productcode`));
 
---Vul de table producten met aangeleverde gegevens
+/*Vul de table producten met aangeleverde gegevens*/
 
 INSERT INTO `artiekel` (`Productcode`, `Product`, `Type`, `Fabriekscode`, `Inkoopprijs`, `Verkoopprijs`) VALUES
 ('1', 'Accuboorhamer', 'WX 382', '1', '6995', '11175'),
@@ -63,9 +63,9 @@ INSERT INTO `artiekel` (`Productcode`, `Product`, `Type`, `Fabriekscode`, `Inkoo
 ('8', 'Accuboorhamer', 'WM 536', '1', '4995', '6320'),
 ('9', 'Accuboorhamer', 'PCL 20', '1', '9995', '12240'),
 ('10', 'Accuboorhamer', 'WX 382', '1', '6995', '11175'),
-('11', 'Accuboorhamer', 'PSR 14.4', '1', '5995', '6800')
+('11', 'Accuboorhamer', 'PSR 14.4', '1', '5995', '6800');
 
---Wijzig de artiekel table zodat deze een relatie kan krijgen
+/*Wijzig de artiekel table zodat deze een relatie kan krijgen*/
 
 ALTER TABLE `artiekel` ADD INDEX(`Fabriekscode`);
 
@@ -73,15 +73,15 @@ ALTER TABLE `artiekel` ADD INDEX(`Fabriekscode`);
 
 
 
---Maak de table voorraad aan
+/*Maak de table voorraad aan*/
 
 CREATE TABLE `Voorraad`
   ( `Locatiecode` INT NOT NULL ,
   `Productcode` INT NOT NULL ,
   `Aantal` INT NOT NULL ,
-  PRIMARY KEY (`Locatiecode`, `Productcode`))
+  PRIMARY KEY (`Locatiecode`, `Productcode`));
 
---Vul de table Voorrad met aangeleverde gegevens
+/*Vul de table Voorrad met aangeleverde gegevens*/
 
 INSERT INTO `voorraad` (`Locatiecode`, `Productcode`, `Aantal`) VALUES
 ('1', '1', '10'),
@@ -94,13 +94,13 @@ INSERT INTO `voorraad` (`Locatiecode`, `Productcode`, `Aantal`) VALUES
 ('3', '8', '14'),
 ('3', '9', '11'),
 ('3', '10', '11'),
-('3', '11', '12')
+('3', '11', '12');
 
 
 
 
 
---Maak de table Medewerkers aan
+/*Maak de table Medewerkers aan*/
 
 CREATE TABLE `Medewerkers` (
   `Medewerkerscode` INT NOT NULL ,
@@ -109,9 +109,57 @@ CREATE TABLE `Medewerkers` (
   `Achternaam` VARCHAR(30) NOT NULL ,
   `Gebruikersnaam` VARCHAR(30) NOT NULL ,
   `Wachtwoord` VARCHAR(30) NOT NULL ,
-  PRIMARY KEY (`Medewerkerscode`))
+  PRIMARY KEY (`Medewerkerscode`));
 
---vul de table medewerkers met aangeleverde gegevens
+/*vul de table medewerkers met aangeleverde gegevens*/
 
 INSERT INTO `medewerkers` (`Medewerkerscode`, `Voorletters`, `Voorvoegsels`, `Achternaam`, `Gebruikersnaam`, `Wachtwoord`) VALUES
-  ('1', 'D.M', 'De Heer', 'Huigen', 'danny', 'Welkom01')
+  ('1', 'D.M', 'De Heer', 'Huigen', 'danny', 'Welkom01');
+
+
+
+
+
+
+
+
+
+
+
+
+/*Queries die worden hergebruikt in de DbHandler Class*/
+
+/*Krijg artiekel van artiekel table*/
+SELECT * FROM artiekel WHERE Productcode = 1;
+
+
+
+
+
+/*Krijg fabriek van fabriek table*/
+SELECT * FROM fabriek WHERE Fabriekscode = 1;
+
+
+
+
+
+/*Krijg locatie van locatie table*/
+SELECT * FROM locatie WHERE LocatieCode = 1;
+
+
+
+
+
+/*Krijg medewerker van medewerkers table*/
+SELECT * FROM medewerkers WHERE Medewerkerscode = 1;
+
+/*Test of de inloggegevens correct zijn en returned GebruikersCode*/
+SELECT Medewerkerscode FROM medewerkers WHERE Gebruikersnaam = 'danny' AND Wachtwoord = 'Welkom01';
+
+
+
+
+
+/*Krijg voorraad van voorraad table*/
+SELECT * FROM Voorraad WHERE Locatiecode = 1 AND Productcode = 1;
+

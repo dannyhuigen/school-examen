@@ -1,0 +1,23 @@
+.main-wrapper__side-bar{
+    width: 150px;
+    height: auto;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    display: inline-block;
+}
+
+.main-wrapper__link-list{
+    width: 100%;
+    height: auto;
+}
+
+.main-wrapper__link-item{
+    list-style-type: none;
+}
+
+.main-wrapper__link-item-link{
+    padding: 10px 0 10px 10px;
+    display: block;
+    color: blue;
+    text-decoration: none;
+ }
