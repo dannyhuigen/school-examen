@@ -132,12 +132,33 @@ INSERT INTO `medewerkers` (`Medewerkerscode`, `Voorletters`, `Voorvoegsels`, `Ac
 /*Krijg artiekel van artiekel table*/
 SELECT * FROM artiekel WHERE Productcode = 1;
 
+/*Verwijder row van artiekel table*/
+DELETE FROM artiekel WHERE Productcode = 1;
+
+/*Update record van artiekel table*/
+UPDATE artiekel SET
+  Product = 'New value',
+  Type = 'New value',
+  Fabriekscode = 'New value',
+  Inkoopprijs = 'New value',
+  Verkoopprijs = 'New value'
+  WHERE CustomerID = 1;
+
 
 
 
 
 /*Krijg fabriek van fabriek table*/
 SELECT * FROM fabriek WHERE Fabriekscode = 1;
+
+/*Verwijder row van fabriek table*/
+DELETE FROM fabriek WHERE Fabriekscode = 1;
+
+/*Update record van fabriek table*/
+UPDATE fabriek SET
+  Fabriek = 'new value',
+  Telefoon = 'new value'
+  WHERE Fabriekscode = 1;
 
 
 
@@ -146,12 +167,32 @@ SELECT * FROM fabriek WHERE Fabriekscode = 1;
 /*Krijg locatie van locatie table*/
 SELECT * FROM locatie WHERE LocatieCode = 1;
 
+/*Verwijder row van locatie table*/
+DELETE FROM locatie WHERE locatieCode = 1;
+
+/*Update record van locatie table*/
+UPDATE locatie SET
+  Locatie = 'New value'
+  WHERE Locatiecode = 1;
+
 
 
 
 
 /*Krijg medewerker van medewerkers table*/
 SELECT * FROM medewerkers WHERE Medewerkerscode = 1;
+
+/*Verwijder row van medewerkers table*/
+DELETE FROM medewerkers WHERE Medewerkerscode = 1;
+
+/*Update record van medewerkers table*/
+UPDATE Medewerkers SET
+  Voorletters = 'New value',
+  Voorvoegsels = 'New value',
+  Achternaam = 'New value',
+  Gebruikersnaam = 'New value',
+  Wachtwoord = 'New value'
+  WHERE Medewerkerscode = 1;
 
 /*Test of de inloggegevens correct zijn en returned GebruikersCode*/
 SELECT Medewerkerscode FROM medewerkers WHERE Gebruikersnaam = 'danny' AND Wachtwoord = 'Welkom01';

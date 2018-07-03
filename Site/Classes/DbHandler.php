@@ -16,6 +16,8 @@ class DbHandler
     var $dataBaseUserName = "root";
     var $dataBaseUserPassword = "";
     var $connection;
+    var $errorMessage;
+    var $
 
     //Constructor voor DB handler
     function __construct(){
@@ -38,6 +40,16 @@ class DbHandler
         $row = mysqli_fetch_assoc($result);
         $fabriekObject = new Fabriek($row["Fabriekscode"] , $row["Fabriek"] , $row["Telefoon"]);
         return $fabriekObject;
+    }
+
+    function deleteFabriek($fabriekId){
+        $query = "DELETE FROM fabriek WHERE Fabriekscode = " . $fabriekId . ";";
+
+        if ($this->connection->query($query) === TRUE) {
+            echo "Record deleted successfully";
+        } else {
+            echo "Error deleting record: " . $this->connection->error;
+        }
     }
 
 }
