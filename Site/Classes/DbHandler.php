@@ -17,7 +17,7 @@ class DbHandler
     var $dataBaseUserPassword = "";
     var $connection;
     var $errorMessage;
-    var $
+    var $succesMessage;
 
     //Constructor voor DB handler
     function __construct(){
@@ -44,11 +44,12 @@ class DbHandler
 
     function deleteFabriek($fabriekId){
         $query = "DELETE FROM fabriek WHERE Fabriekscode = " . $fabriekId . ";";
-
         if ($this->connection->query($query) === TRUE) {
-            echo "Record deleted successfully";
+            $this->succesMessage = "Record deleted successfully";
+            $this->errorMessage = NULL;
         } else {
-            echo "Error deleting record: " . $this->connection->error;
+            $this ->errorMessage = "Error deleting record: " . $this->connection->error;
+            $this->succesMessage = NULL;
         }
     }
 

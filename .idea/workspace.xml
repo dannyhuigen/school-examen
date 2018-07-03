@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8217670-f92d-46d3-b176-a2722a5e2a82" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SQL Queries/Queries" afterPath="$PROJECT_DIR$/SQL Queries/Queries" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Site/Classes/DbHandler.php" afterPath="$PROJECT_DIR$/Site/Classes/DbHandler.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,13 +48,13 @@
           <file leaf-file-name="DbHandler.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Site/Classes/DbHandler.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="238">
-                  <caret line="19" column="9" lean-forward="false" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+                <state relative-caret-position="748">
+                  <caret line="49" column="16" lean-forward="true" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
                   <folding>
-                    <marker date="1530607889222" expanded="true" signature="1007:1050" ph="SELECT * FRO... fabriek" />
-                    <marker date="1530607889222" expanded="true" signature="1366:1406" ph="DELETE FROM " />
-                    <marker date="1530607889222" expanded="true" signature="1366:1407" ph="DELETE FROM " />
-                    <marker date="1530607889222" expanded="true" signature="1366:1423" ph="DELETE FROM " />
+                    <marker date="1530608128450" expanded="true" signature="1021:1064" ph="SELECT * FRO... fabriek" />
+                    <marker date="1530608128450" expanded="true" signature="1380:1420" ph="DELETE FROM " />
+                    <marker date="1530608128450" expanded="true" signature="1380:1421" ph="DELETE FROM " />
+                    <marker date="1530608128450" expanded="true" signature="1380:1437" ph="DELETE FROM " />
                   </folding>
                 </state>
               </provider>
@@ -252,12 +250,12 @@
       <updated>1530530872452</updated>
       <workItem from="1530530874197" duration="7237000" />
       <workItem from="1530553378780" duration="9773000" />
-      <workItem from="1530605667887" duration="2207000" />
+      <workItem from="1530605667887" duration="2440000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19217000" />
+    <option name="totallyTimeSpent" value="19450000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -487,13 +485,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Site/Classes/DbHandler.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="19" column="9" lean-forward="false" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+        <state relative-caret-position="748">
+          <caret line="49" column="16" lean-forward="true" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
           <folding>
-            <marker date="1530607889222" expanded="true" signature="1007:1050" ph="SELECT * FRO... fabriek" />
-            <marker date="1530607889222" expanded="true" signature="1366:1406" ph="DELETE FROM " />
-            <marker date="1530607889222" expanded="true" signature="1366:1407" ph="DELETE FROM " />
-            <marker date="1530607889222" expanded="true" signature="1366:1423" ph="DELETE FROM " />
+            <marker date="1530608128450" expanded="true" signature="1021:1064" ph="SELECT * FRO... fabriek" />
+            <marker date="1530608128450" expanded="true" signature="1380:1420" ph="DELETE FROM " />
+            <marker date="1530608128450" expanded="true" signature="1380:1421" ph="DELETE FROM " />
+            <marker date="1530608128450" expanded="true" signature="1380:1437" ph="DELETE FROM " />
           </folding>
         </state>
       </provider>
